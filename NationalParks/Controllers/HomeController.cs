@@ -4,11 +4,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using NationalParks.Models;
-using NationalParks.APIHandlerManager;
+using NationalCities.Models;
+using NationalCities.APIHandlerManager;
 using Newtonsoft.Json;
 
-namespace NationalParks.Controllers
+namespace NationalCities.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,12 +17,12 @@ namespace NationalParks.Controllers
             return View();
         }
 
-        public IActionResult Parks()
+        public IActionResult Cities()
         {
             APIHandler webHandler = new APIHandler();
-            Parks parks = webHandler.GetParks();
+            Cities cities = webHandler.GetCities();
 
-            return View(parks);
+            return View(cities);
         }
 
         public IActionResult Privacy()

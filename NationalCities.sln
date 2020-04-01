@@ -1,7 +1,8 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NationalParks", "NationalParks\NationalParks.csproj", "{C75E277B-687B-4366-B97B-9A112C4E68BB}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29905.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NationalCities", "NationalParks\NationalCities.csproj", "{C75E277B-687B-4366-B97B-9A112C4E68BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +14,11 @@ Global
 		{C75E277B-687B-4366-B97B-9A112C4E68BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C75E277B-687B-4366-B97B-9A112C4E68BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C75E277B-687B-4366-B97B-9A112C4E68BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {040AA412-B3E8-4D57-8111-F7345E69AE6E}
 	EndGlobalSection
 EndGlobal

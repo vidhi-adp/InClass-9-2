@@ -1,6 +1,6 @@
 using System;
 
-namespace NationalParks.Models
+namespace NationalCities.Models
 {
     public class ErrorViewModel
     {

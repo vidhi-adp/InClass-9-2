@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using Newtonsoft.Json;
-using NationalParks.Models;
+using NationalCities.Models;
 
-namespace NationalParks.APIHandlerManager
+namespace NationalCities.APIHandlerManager
 {
   public class APIHandler
   {
@@ -36,29 +36,29 @@ namespace NationalParks.APIHandlerManager
     /// JsonConvert parses the JSON string into classes
     /// </summary>
     /// <returns></returns>
-    public Parks GetParks()
+    public Cities GetCities()
     {
-      string NATIONAL_PARK_API_PATH = BASE_URL + "/parks?limit=20";
-      string parksData = "";
+      string NATIONAL_CITIES_API_PATH = BASE_URL + "/cities?limit=20";
+      string citiesData = "";
 
-      Parks parks = null;
+      Cities cities = null;
 
-      httpClient.BaseAddress = new Uri(NATIONAL_PARK_API_PATH);
+      httpClient.BaseAddress = new Uri(NATIONAL_CITIES_API_PATH);
 
       // It can take a few requests to get back a prompt response, if the API has not received
       //  calls in the recent past and the server has put the service on hibernation
       try
       {
-        HttpResponseMessage response = httpClient.GetAsync(NATIONAL_PARK_API_PATH).GetAwaiter().GetResult();
+        HttpResponseMessage response = httpClient.GetAsync(NATIONAL_CITIES_API_PATH).GetAwaiter().GetResult();
         if (response.IsSuccessStatusCode)
         {
-          parksData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+          citiesData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
         }
 
-        if (!parksData.Equals(""))
+        if (!citiesData.Equals(""))
         {
           // JsonConvert is part of the NewtonSoft.Json Nuget package
-          parks = JsonConvert.DeserializeObject<Parks>(parksData);
+          cities = JsonConvert.DeserializeObject<Cities>(citiesData);
         }
       }
       catch (Exception e)
@@ -67,7 +67,7 @@ namespace NationalParks.APIHandlerManager
         Console.WriteLine(e.Message);
       }
 
-      return parks;
+      return cities;
     }
   }
 }
